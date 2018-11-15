@@ -37,6 +37,8 @@ app.get('/timezone', (req, res) => {
 
 
 // listen for requests
-app.listen(8080, () => {
-    console.log("Server is listening on port 8080");
+
+var port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", function() {
+console.log("Listening on Port 3000");
 });
