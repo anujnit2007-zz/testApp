@@ -14,6 +14,10 @@ app.use(bodyParser.json())
 
 // define a simple route
 app.get('/', (req, res) => {
+
+    res.json({"output": "server is working"});
+});
+app.get('/timezone', (req, res) => {
     let timezone = req.query.timezone;
     console.log(timezone);
     let rawdata = fs.readFileSync('./ne_10m_time_zones.geojson');
@@ -31,7 +35,8 @@ app.get('/', (req, res) => {
     res.json({"output": output});
 });
 
+
 // listen for requests
-app.listen(3000, () => {
-    console.log("Server is listening on port 3000");
+app.listen(8080, () => {
+    console.log("Server is listening on port 8080");
 });
