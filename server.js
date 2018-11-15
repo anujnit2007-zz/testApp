@@ -32,6 +32,7 @@ app.get('/timezone', (req, res) => {
         output.push(jsonObject.features[index].geometry.coordinates[0]);
     }
 }
+res.header('Access-Control-Allow-Origin', '*');
     res.json({"output": output});
 });
 
